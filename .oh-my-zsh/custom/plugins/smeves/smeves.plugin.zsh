@@ -8,4 +8,4 @@ compdef _c c
 
 mcd() { /usr/local/bin/memcached -d; }
 
-h() { heroku $1; }
+alias h='heroku'
