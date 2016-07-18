@@ -1,0 +1,31 @@
+[user]
+	name = Scott Meves
+	email = scott@quikly.com
+[credential]
+	helper = osxkeychain
+[core]
+	quotepath = false
+	excludesfile = /opt/boxen/config/git/gitignore
+	editor = /usr/local/bin/mate -w
+[color]
+	ui = true
+[diff]
+  tool = opendiff
+[hub]
+  protocol = https
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+[push]
+	default = matching
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true
+[alias]
+  plog = log --graph --pretty=format:'%Cred%h%Creset - %Cblue%cn%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev --date=relative
