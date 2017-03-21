@@ -2,7 +2,7 @@
 	name = Scott Meves
 	email = scott@quikly.com
 [credential]
-	helper = osxkeychain
+	helper = /opt/boxen/bin/boxen-git-credential
 [core]
 	quotepath = false
 	excludesfile = /opt/boxen/config/git/gitignore
