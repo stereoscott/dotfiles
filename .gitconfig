@@ -29,3 +29,4 @@
 	required = true
 [alias]
   plog = log --graph --pretty=format:'%Cred%h%Creset - %Cblue%cn%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev --date=relative
+	today = log --since=00:00:00 --all --no-merges --oneline --author=scott@quikly.com
