@@ -1,0 +1,2 @@
+includeDirectories = "{$includDirectories,.oh-my-zsh}"
+includeFiles = "{$includeFiles,.bash_profile,.zshrc}"
