@@ -1,0 +1,30 @@
+#! /bin/bash
+
+# Fail if an error is returned
+set -e
+
+# Declare functions before using them
+function link_file() {
+    if [ -e $HOME/$1 ]; then
+        BACKUP_PATH=$1
+        # Optionally pass the name of the backup file
+        if [ -n "$3" ]; then
+            BACKUP_PATH=$3
+        fi
+        
+        d=$(dirname "$HOME/.old/$BACKUP_PATH")
+        [ -d $d ] || mkdir -p $d
+
+        echo "Backing up $1 to $HOME/.old/$BACKUP_PATH"
+        mv -f $HOME/$1 $HOME/.old/$BACKUP_PATH
+    fi
+
+    echo "Linking $HOME/$1 --> $HOME/src/dotfiles/$1"
+    ln -hfs $HOME/src/dotfiles/$2 $HOME/$1
+}
+
+link_file .zshrc       .zshrc
+link_file .gitconfig   .gitconfig
+link_file .gitignore   .gitignore
+link_file .oh-my-zsh/custom/plugins/smeves .oh-my-zsh/custom/plugins/smeves
+link_file .oh-my-zsh/themes/smeves.zsh-theme .oh-my-zsh/themes/smeves.zsh-theme
