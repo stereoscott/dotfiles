@@ -9,11 +9,11 @@ compdef _c c
 mcd() { /usr/local/bin/memcached -d; }
 
 prod() {
-  heroku "$1" -a quikly-prod
+  heroku "$@" -a quikly-prod
 }
 
 staging() {
-  heroku "$1" -a quikly-staging
+  heroku "$@" -a quikly-staging
 }
 
 alias h='heroku'
