@@ -8,6 +8,14 @@ compdef _c c
 
 mcd() { /usr/local/bin/memcached -d; }
 
+prod() {
+  heroku "$1" -a quikly-prod
+}
+
+staging() {
+  heroku "$1" -a quikly-staging
+}
+
 alias h='heroku'
 alias f='heroku local -f Procfile.dev'
 alias redis='redis-cli -h $BOXEN_REDIS_HOST -p $BOXEN_REDIS_PORT'
