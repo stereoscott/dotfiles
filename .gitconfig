@@ -2,10 +2,9 @@
 	name = Scott Meves
 	email = scott@quikly.com
 [credential]
-	helper = /opt/boxen/bin/boxen-git-credential
+	helper = osxkeychain
 [core]
 	quotepath = false
-	excludesfile = /opt/boxen/config/git/gitignore
 	editor = code --wait
 [color]
 	ui = true
@@ -35,3 +34,5 @@
 	gpgsign = true
 [gpg]
 	program = /usr/local/bin/gpg
+[github]
+	user = stereoscott

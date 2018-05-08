@@ -102,11 +102,16 @@ fi
 export EC2_HOME=/usr/local/ec2/ec2-api-tools-1.6.13.0
 export PATH=$PATH:$EC2_HOME/bin
 
+export REDIS_URL=redis://127.0.0.1:6379/
+export BOXEN_SOCKET_DIR=/tmp
+
 # Boxen
-[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
+# [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
 
 # iTerm2 shell integrations
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+eval "$(rbenv init -)"
 
 # https://github.com/nodenv/nodenv#installation
 export PATH="$HOME/.nodenv/bin:$PATH"
