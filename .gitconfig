@@ -17,7 +17,7 @@
 	clean = git media clean %f
 	smudge = git media smudge %f
 [push]
-	default = matching
+	default = current
 [filter "hawser"]
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f

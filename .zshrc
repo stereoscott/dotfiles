@@ -135,4 +135,3 @@ export EDITOR="code"
 # Disable nomatch
 # https://github.com/thoughtbot/dotfiles/pull/194
 unsetopt nomatch
-export PATH="$HOME/.yarn/bin:$PATH"
