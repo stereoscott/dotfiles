@@ -57,6 +57,8 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+export PATH=/opt/homebrew/bin:$PATH
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -103,10 +105,6 @@ export EC2_HOME=/usr/local/ec2/ec2-api-tools-1.6.13.0
 export PATH=$PATH:$EC2_HOME/bin
 
 export REDIS_URL=redis://127.0.0.1:6379/
-export BOXEN_SOCKET_DIR=/tmp
-
-# Boxen
-# [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
 
 # iTerm2 shell integrations
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
@@ -129,9 +127,12 @@ export PATH=$PATH:/usr/local/go/bin
 export GOPATH=/Users/smeves/go
 export PATH=$GOPATH/bin:$PATH
 
-# Textmate
+# VS Code
 export EDITOR="code"
 
 # Disable nomatch
 # https://github.com/thoughtbot/dotfiles/pull/194
 unsetopt nomatch
+
+# For git code signing git GPG
+export GPG_TTY=$(tty)

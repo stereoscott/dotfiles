@@ -3,6 +3,15 @@
 # Fail if an error is returned
 set -e
 
+# install apps in .Brewfile
+brew bundle --file=$HOME/.dotfiles/Brewfile
+
+mkdir -p ~/.gnupg
+# remember gpg passphrase on mac
+touch ~/.gnupg/gpg.conf
+grep -qxF 'use-agent' ~/.gnupg/gpg.conf || echo 'use-agent' | tee ~/.gnupg/gpg.conf
+chmod 700 ~/.gnupg
+
 # Declare functions before using them
 function link_file() {
     if [ -e $HOME/$1 ]; then
@@ -20,7 +29,7 @@ function link_file() {
     fi
 
     echo "Linking $HOME/$1 --> $HOME/src/dotfiles/$1"
-    ln -hfs $HOME/src/dotfiles/$2 $HOME/$1
+    ln -hfs $HOME/.dotfiles/$2 $HOME/$1
 }
 
 link_file .zshrc       .zshrc
@@ -28,3 +37,4 @@ link_file .gitconfig   .gitconfig
 link_file .gitignore   .gitignore
 link_file .oh-my-zsh/custom/plugins/smeves .oh-my-zsh/custom/plugins/smeves
 link_file .oh-my-zsh/themes/smeves.zsh-theme .oh-my-zsh/themes/smeves.zsh-theme
+
